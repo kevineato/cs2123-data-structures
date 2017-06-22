@@ -1,0 +1,32 @@
+1
+Bob Smith
+24
+3.5
+2
+Jill Williams
+23
+3.6
+3
+Tom Jones
+32
+2.4
+4
+Julie Jackson
+21
+3.1
+5
+Al Brown
+23
+3.35
+6
+Juan Garcia
+22
+3.4
+-7
+Melissa Davis
+20
+3.2
+8
+Jack Black
+44
+1.1
