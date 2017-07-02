@@ -1,0 +1,21 @@
+enroll 2123 100 1
+enroll 2123 101 4
+enroll 2123 102 2
+enroll 2123 103 3
+enroll 2123 104 1
+enroll 2123 109 1
+enroll 2123 105 4
+enroll 2123 108 2
+enroll 2123 106 4
+enroll 2123 107 3
+addSeats 2123 1
+addSeats 2123 2
+drop 2123 101
+drop 2123 100
+drop 2123 103
+enroll 3343 100 1
+enroll 3343 101 4
+enroll 3343 102 2
+addSeats 3343 5
+enroll 3343 103 3
+addSeats 3343 2
