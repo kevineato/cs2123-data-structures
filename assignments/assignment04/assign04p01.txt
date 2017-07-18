@@ -1,0 +1,33 @@
+Kevin Wilson syx009
+
+Assignment 4 Problem 1
+
+using this struct:
+
+  typedef struct node {
+    int data;
+    struct node *left;
+    struct node *right;
+  } node;
+
+/* root is the root of a tree and ptrNode is the node who's level is to be obtained */
+int getLevel(node *root, node *ptrNode) {
+  if (root == NULL || ptrNode == NULL)
+    return -1;
+
+  /* found ptrNode so return 0 since it is on this level */
+  if (root == ptrNode)
+    return 0;
+
+  /* only >= 0 if ptrNode was found further down than root */
+  int left = getLevel(root->left, ptrNode);
+  if (left >= 0)
+    /* add 1 since it is found 1 subtree down from root */
+    return left + 1;
+
+  int right = getLevel(root->right, ptrNode);
+  if (right >= 0)
+    return right + 1;
+
+  return -1;
+}
