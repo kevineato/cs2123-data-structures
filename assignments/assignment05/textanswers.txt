@@ -1,0 +1,44 @@
+Kevin Wilson syx009
+
+1. Growth analysis
+
+  (1) runs until i >= n incrementing i by 2 each iteration.
+   => starts with i = 1, so 2 is added x times and 1 + 2x >= n, and x >= (n - 1) / 2.
+   => runs (n - 1) / 2 times which is O(n).
+
+  (2) outer loop runs until i >= n. inner loop runs until j <= 0.
+   => outer loop starts with i = 1 while i < n or until i = n - 1.
+      so it is run (n - 1) - 1 + 1 times = n - 1 times.
+   => inner loop starts with j = 1000 / i while j > 0 or until j = 1.
+      so it is run 1000 / i - 1 + 1 times = 1000 / i times.
+   => the line in the inner loop is run (n - 1) * 1000 * sigma(1, n - 1, 1 / i).
+      the summation of 1 / i from 1 to n - 1 is roughly ln(n).
+   => thus the line in the loop is run about (n - 1) * 1000 * ln(n).
+      this function is O(n * log(n)).
+
+  (3) outer loop runs from 0 while i < n, that is until i = n - 1, so runs n times.
+   => inner loop runs n times when i = 0, n - 1 times when i = 1,..., 1 time when i = n - 1.
+   => these correlate with the summation of the first n numbers, inner while loop is superfluous.
+      this evaluates to n * (n + 1) / 2 which is O(n^2).
+
+  (4) m = 2 ^ n and the loop runs until m <= 1 and m is divided by 2 each iteration.
+   => the loop is run x times where m is divided by 2 x number of times.
+   => m / 2 ^ x <= 1
+   => 2 ^ n <= 2 ^ x
+   => n <= x so is run x = n times which is O(n).
+
+
+Problem 2: # of sorting assignments = 2528.
+
+Problem 3: # of sorting assignments = 1290.
+
+4. Evaluation of #2 and #3
+
+  The two way insertion sort seems to be more efficient in terms of the number of assignments.
+  It has a 49% increase in speed compared to the normal insertion sort implementation.
+  I don't believe the Big-Oh runtimes are different, because even though the number of
+  assignments may be less in the two-way version of insertion sort, the worst case would
+  only result in a decrease of the number of assignments by a constant amount of
+  something like 1 / 2 when inserting between two numbers. This is insignificant when
+  considering Big-Oh runtimes and thus will still result in a runtime of O(n^2).
+
